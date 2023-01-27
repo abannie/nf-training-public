@@ -89,4 +89,5 @@ workflow {
     quant_ch = QUANTIFICATION(index_ch, read_pairs_ch)
     fastqc_ch = FASTQC(read_pairs_ch)
     MULTIQC(quant_ch.mix(fastqc_ch).collect())
+    //(quant_ch.mix(fastqc_ch).collect().view())
 }
